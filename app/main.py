@@ -1,14 +1,16 @@
 import streamlit as st
-from services.chat_service import ChatService
+from factory import ChatbotFactory
+
 
 st.title("AI Chatbot")
 
-chat_service = ChatService()
 
-character = st.selectbox("Choose a character:", list(chat_service.prompts.keys()))
+character = st.selectbox("Choose a character:", list(ChatbotFactory.get_characters()))
 user_input = st.text_input("Ask something: ")
+
 
 if st.button("Send"):
     if user_input:
-        response = chat_service.chat_response(character, user_input)
+        chatbot = ChatbotFactory.create(character_type=character, model_type="llama3.2")
+        response = chatbot.chat_response(user_input)
         st.write(f"**{character}:** {response}")

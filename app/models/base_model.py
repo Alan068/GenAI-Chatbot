@@ -2,5 +2,5 @@ from abc import ABC, abstractmethod
 
 class BaseModel(ABC):
     @abstractmethod
-    def generate(self, prompt: str) -> str:
+    def generate_response(self, prompt: str) -> str:
         pass
