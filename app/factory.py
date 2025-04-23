@@ -6,7 +6,7 @@ from utils.utils import load_prompts
 
 class ChatbotFactory:
     @staticmethod
-    def create(character_type: str, model_type: str = "llama-3.2") -> ChatService:
+    def create(character_type: str, model_type: str = "llama-3.2", session_id: str = None) -> ChatService:
         def create_character():
             return BaseCharacter(character_type)
 
@@ -19,9 +19,9 @@ class ChatbotFactory:
             raise ValueError(f"Unsupported model: {model_type}")
 
         model = model_class(model_type)
-
         character = create_character()
-        return ChatService(character, model)
+
+        return ChatService(character, model, session_id=session_id)
 
 
     @staticmethod

@@ -1,9 +1,26 @@
+from db.mongodb import save_chat, get_recent_chats
+
+
 class ChatService:
-    def __init__(self, character, model):
+    def __init__(self, character, model, session_id):
         self.character = character
         self.model = model
+        self.session_id = session_id
+
 
     def chat_response(self, user_input: str) -> str:
-        prompt = self.character.build_prompt(user_input)
-        response = self.model.generate_response(prompt)
+        context = self.build_context()
+        full_prompt = f"{self.character.prompt}\n\n{context}User: {user_input}\nBot:"
+        response = self.model.generate_response(full_prompt)
+        save_chat(self.session_id, self.character.character_type, user_input, response)
         return response
+
+
+    def build_context(self):
+        past_chats = get_recent_chats(self.session_id, self.character.character_type)
+        context = ""
+        for chat in reversed(past_chats):
+            context += f"User: {chat['user']}\nBot: {chat['bot']}\n"
+        return context
+
+
