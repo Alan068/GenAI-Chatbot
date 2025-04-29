@@ -16,20 +16,20 @@ git clone https://github.com/alan068/genai-chatbot.git
 cd genai-chatbot
 
 2. Create and Activate Virtual Environment  
-python -m venv venv  (In VS Code Terminal)
+python -m venv venv  (In VS Code Terminal)  
 . venv\Scripts\activate
 
-3. Install Dependencies
-pip install -r requirements.txt
-or
-manually install following libraries:
-pip install pyyaml   (In VS Code Terminal)
-pip install ollama
-pip install streamlit
-pip install pymongo
+3. Install Dependencies  
+pip install -r requirements.txt  
+or  
+manually install following libraries:  
+pip install pyyaml   (In VS Code Terminal)  
+pip install ollama  
+pip install streamlit  
+pip install pymongo  
 
-4. Ollama Setup
-Install and run Ollama locally from: https://ollama.com/
+4. Ollama Setup  
+Install and run Ollama locally from: https://ollama.com/    
 
 Then in cmd
 To check version: ollama --version
