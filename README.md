@@ -31,28 +31,28 @@ pip install pymongo
 4. Ollama Setup  
 Install and run Ollama locally from: https://ollama.com/    
 
-Then in cmd
-To check version: ollama --version
-To check models: ollama list
-To run model 3.2: ollama run llama3.2
-To stop: ctrl+c
+Then in cmd  
+To check version: ollama --version  
+To check models: ollama list  
+To run model 3.2: ollama run llama3.2  
+To stop: ctrl+c  
 
-5. MongoDB Setup
-Make sure MongoDB is installed and running locally
-To connect mongodb database:
+5. MongoDB Setup  
+Make sure MongoDB is installed and running locally  
+To connect mongodb database:    
 
-open cmd, write this comand > mongod
-keep this cmd open and running in bg
-A 'chatbot' database and 'chats' collection will be auto-created on first run.
+open cmd, write this comand > mongod  
+keep this cmd open and running in bg  
+A 'chatbot' database and 'chats' collection will be auto-created on first run.  
 
-6. Run the App
-streamlit run main.py
-will open at Local URL: http://localhost:8501
+6. Run the App  
+streamlit run main.py  
+will open at Local URL: http://localhost:8501  
 
 
-# Future Add ons
-More AI models support like GPT model
-Instead of passing last 5 convo, maybe switch to summarization for context based chat
+# Future Add ons  
+More AI models support like GPT model  
+Instead of passing last 5 convo, maybe switch to summarization for context based chat  
 Use Browser cookies instead of session ID
 
 
