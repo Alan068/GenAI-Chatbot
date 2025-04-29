@@ -12,10 +12,10 @@ A multi-character AI chatbot built with Streamlit and powered by Llama 3.2 via O
 # Installation
 
 1. Clone the Repo   
-git clone https://github.com/alan068/genai-chatbot.git
+git clone https://github.com/alan068/genai-chatbot.git  
 cd genai-chatbot
 
-2. Create and Activate Virtual Environment
+2. Create and Activate Virtual Environment  
 python -m venv venv  (In VS Code Terminal)
 . venv\Scripts\activate
 
