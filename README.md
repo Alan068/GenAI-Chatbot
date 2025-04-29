@@ -11,7 +11,7 @@ A multi-character AI chatbot built with Streamlit and powered by Llama 3.2 via O
 
 # Installation
 
-1. Clone the Repo \n
+1. Clone the Repo   
 git clone https://github.com/alan068/genai-chatbot.git
 cd genai-chatbot
 
