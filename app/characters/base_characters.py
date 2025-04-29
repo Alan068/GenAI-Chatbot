@@ -7,7 +7,11 @@ class BaseCharacter:
         self.prompts = load_prompts(prompt_file)
 
 
-    def build_prompt(self, message: str) -> str:     # Fetches and build prompt for engineeer or doctor
-        character_prompt = self.prompts.get(self.character_type, "")
-        return f"{character_prompt}\nUser: {message}"
+    @property    # Turns method into attribute type, no need to use (), used when need to use 'self'
+    def prompt(self) -> str:
+        return self.prompts.get(self.character_type, "")
+
+
+    def build_prompt(self, message: str) -> str:     # build final prompt for engineeer or doctor
+        return f"{self.prompts}\nUser: {message}"
 
