@@ -1,12 +1,12 @@
-from characters.base_characters import BaseCharacter
-from models.llama_model import LlamaModel
-from services.chat_service import ChatService
-from utils.utils import load_prompts
+from app.characters.base_characters import BaseCharacter
+from app.models.llama_model import LlamaModel
+from app.services.chat_service import ChatService
+from app.utils.utils import load_prompts
 
 
 class ChatbotFactory:
     @staticmethod
-    def create(character_type: str, model_type: str = "llama-3.2", session_id: str = None) -> ChatService:
+    def create(character_type: str, model_type: str = "llama-3.2", session_id: str = None, metadata=None) -> ChatService:
         def create_character():
             return BaseCharacter(character_type)
 
@@ -21,7 +21,7 @@ class ChatbotFactory:
         model = model_class(model_type)
         character = create_character()
 
-        return ChatService(character, model, session_id=session_id)
+        return ChatService(character, model, session_id=session_id, metadata=metadata)
 
 
     @staticmethod

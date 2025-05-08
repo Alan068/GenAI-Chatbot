@@ -1,5 +1,5 @@
 import ollama
-from models.base_model import BaseModel
+from app.models.base_model import BaseModel
 
 class LlamaModel(BaseModel):
     def __init__(self, model_name="llama3.2"):

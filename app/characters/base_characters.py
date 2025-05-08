@@ -1,4 +1,4 @@
-from utils.utils import load_prompts
+from app.utils.utils import load_prompts
 
 
 class BaseCharacter:
