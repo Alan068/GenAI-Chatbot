@@ -1,5 +1,5 @@
 import streamlit as st
-from factory import ChatbotFactory
+from app.factory import ChatbotFactory
 import uuid
 
 
